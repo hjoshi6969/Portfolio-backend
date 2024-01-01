@@ -24,6 +24,22 @@ app.get('/projects', (req, res) => {
     })
 })
 
+app.get('/skills', (re, res) => {
+    const sql = "SELECT * FROM skills";
+    db.query(sql, (err, data) => {
+        if(err) return res.json(err);
+        return res.json(data);
+    })
+})
+
+app.get('/catogeries', (re, res) => {
+    const sql = "SELECT * FROM catogeries";
+    db.query(sql, (err,data) => {
+        if(err) return res.json(err);
+        return res.json(data)
+    })
+})
+
 app.listen(8000, () => {
     console.log("lestining");
 });
